@@ -1,0 +1,12 @@
+.navbar {
+    background-color:#D4FAFC;
+    padding: 10px;
+  }
+  
+  .navbar-logo {
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+  }
+  

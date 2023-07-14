@@ -5,13 +5,11 @@ import { Box, Button, Typography } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
- 
-
 
 const CarDetail = () => {
   const { carId } = useParams();
   const cars = useCars([]);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const car = cars.find((car) => car.id === parseInt(carId));
 
@@ -19,13 +17,19 @@ const CarDetail = () => {
     return <Typography variant="h3">Car not found</Typography>;
   }
 
-
   const goToRentForm = () => {
-     navigate(`/car/${carId}/rental-form`);
+    navigate(`/car/${carId}/rental-form`);
   };
-  
+
   return (
-    <Box>
+    <Box
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+      }}
+    >
       <Card style={{ width: '400px' }}>
         <CardMedia component="img" height="240" image={car.imageLink} alt={car.name} />
         <CardContent>
@@ -39,9 +43,9 @@ const CarDetail = () => {
           <Typography variant="body2" color="text.secondary">
             Price: {car.rentalFee}
           </Typography>
-         <Button onClick={goToRentForm} variant="contained" color="primary">
-          Rent me now
-        </Button>
+          <Button onClick={goToRentForm} variant="contained" color="primary">
+            Rent me now
+          </Button>
         </CardContent>
       </Card>
     </Box>

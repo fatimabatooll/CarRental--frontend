@@ -1,13 +1,12 @@
 import React from 'react';
-// import { AppBar, Toolbar, Typography,  } from '@mui/material';
 import logo from './logo.png';
-
+import './navbar.css'
 
 const Navbar = () => {
   return (
-         <header>
-            <img src={logo} alt="Logo"/>
-         </header>
+    <nav className="navbar">
+      <img src={logo} alt="Logo" className="navbar-logo" />
+    </nav>
   );
 };
 
